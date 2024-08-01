@@ -13,7 +13,7 @@ namespace RestaurantProject {
 
             //register DbContext
             builder.Services.AddDbContext<RestaurantProjectContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             //Add Identity Services
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
