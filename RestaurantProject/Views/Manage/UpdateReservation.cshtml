@@ -1,0 +1,26 @@
+﻿@model UpdateReservationViewModel;
+
+<h2 class="display-5 text-center">Update Reservation</h2>
+
+@using (Html.BeginForm()) {
+    <div>
+        @Html.TextBoxFor(m => m.LocationId, new { @placeholder = "Location ID", @readonly = "readonly" })
+        @Html.ValidationMessageFor(m => m.LocationId, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.NumOfPeople, new { @placeholder = "Number of People" })
+        @Html.ValidationMessageFor(m => m.NumOfPeople, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ReservationDateTime)
+        @Html.TextBoxFor(m => m.ReservationDateTime, "{0:yyyy-MM-ddTHH:mm}", new { @type = "datetime-local" })
+        @Html.ValidationMessageFor(m => m.ReservationDateTime, "", new { @class = "text-danger" })
+    </div>
+
+    @Html.HiddenFor(m => m.ReservationId)
+    <button type="submit" class="addbutton">Update</button>
+}

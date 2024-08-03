@@ -1,1 +1,28 @@
 ﻿@model PromotionViewModel;
+
+<h2 class="display-5 text-center">Create Promotion</h2>
+
+@using (Html.BeginForm()) {
+    <div>
+        @Html.TextBoxFor(m => m.Image, new { @placeholder = "Image URL" })
+        @Html.ValidationMessageFor(m => m.Image, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Description, new { @placeholder = "Description" })
+        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Discount, new { @placeholder = "Discount" })
+        @Html.ValidationMessageFor(m => m.Discount, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.DateTime)
+        @Html.TextBoxFor(m => m.DateTime, "{0:yyyy-MM-ddTHH:mm}", new { @type = "datetime-local" })
+        @Html.ValidationMessageFor(m => m.DateTime, "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="addbutton">Add</button>
+}

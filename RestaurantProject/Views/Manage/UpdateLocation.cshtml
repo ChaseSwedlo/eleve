@@ -1,0 +1,21 @@
+﻿@model Location;
+
+<h2 class="display-5 text-center">Update Location</h2>
+
+@using (Html.BeginForm()) {
+    <div>
+        @Html.TextBoxFor(m => m.Image, new { @placeholder = "Image URL" })
+        @Html.ValidationMessageFor(m => m.Image, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Address, new { @placeholder = "Address" })
+        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+    </div>
+
+    @Html.HiddenFor(m => m.LocationId)
+    <button type="submit" class="addbutton">Update</button>
+}

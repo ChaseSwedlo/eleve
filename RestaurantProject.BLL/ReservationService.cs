@@ -23,5 +23,9 @@ namespace RestaurantProject.BLL {
         public void DeleteReservation(int id) {
             _reservationDAL.DeleteReservation(id);
         }
+
+        public void UpdateReservation(Reservation reservation) {
+            _reservationDAL.UpdateReservation(reservation);
+        }
     }
 }

@@ -1,1 +1,108 @@
 ﻿@model ManageViewModel;
+
+<h2 class="display-5 text-center">Reservations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ReservationId</th>
+            <th>LocationId</th>
+            <th>Name</th>
+            <th>NumOfPeople</th>
+            <th>ReservationDateTime</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservations in Model.Reservations) {
+            <tr>
+                <td>@reservations.ReservationId</td>
+                <td>@reservations.LocationId</td>
+                <td>@reservations.Name</td>
+                <td>@reservations.NumOfPeople</td>
+                <td>@reservations.ReservationDateTime</td>
+                <td>
+                    <form asp-action="UpdateReservation" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="@reservations.ReservationId" />
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    <form asp-action="DeleteReservation" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="@reservations.ReservationId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="display-5 text-center">Locations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>LocationId</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var location in Model.Locations) {
+            <tr>
+                <td>@location.LocationId</td>
+                <td>@location.Image</td>
+                <td>@location.Name</td>
+                <td>@location.Address</td>
+                <td>
+                    <form asp-action="UpdateLocation" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="@location.LocationId" />
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="display-5 text-center">Promotions</h2>
+<form asp-action="Create" method="get">
+    <button type="submit" class="btn btn-primary">Add Promotion</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>PromotionId</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Discount Price</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var promo in Model.Promotions) {
+            <tr>
+                <td>@promo.PromotionId</td>
+                <td>@promo.Image</td>
+                <td>@promo.Name</td>
+                <td>@promo.Description</td>
+                <td>$@promo.Discount</td>
+                <td>@promo.DateTime</td>
+                <td>
+                    <form asp-action="UpdatePromo" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="2" />
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    <form asp-action="Delete" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="2" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
