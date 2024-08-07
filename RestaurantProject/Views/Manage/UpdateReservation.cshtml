@@ -1,0 +1,29 @@
+﻿@model UpdateReservationViewModel;
+
+<h2 class="display-5 text-center">Update Reservation</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "m-center-form" })) {
+    <div class="form-group">
+        @Html.LabelFor(m => m.LocationId, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.LocationId, new { @readonly = "readonly", @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.LocationId, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumOfPeople, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.NumOfPeople, new { @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.NumOfPeople, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReservationDateTime, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.ReservationDateTime, "{0:yyyy-MM-ddTHH:mm}", new { @type = "datetime-local", @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.ReservationDateTime, "", new { @class = "text-danger" })
+    </div>
+
+    @Html.HiddenFor(m => m.ReservationId)
+    <button type="submit" class="btn btn-primary">Update</button>
+}

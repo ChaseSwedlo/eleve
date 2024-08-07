@@ -1,1 +1,110 @@
 ﻿@model ManageViewModel;
+
+<h2 class="table-titles">Reservations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="id-column">ReservationId</th>
+            <th>LocationId</th>
+            <th>Name</th>
+            <th>NumOfPeople</th>
+            <th>ReservationDateTime</th>
+            <th class="actions-column">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservations in Model.Reservations) {
+            <tr>
+                <td class="id-column">@reservations.ReservationId</td>
+                <td>@reservations.LocationId</td>
+                <td>@reservations.Name</td>
+                <td>@reservations.NumOfPeople</td>
+                <td>@reservations.ReservationDateTime</td>
+                <td class="actions-column">
+                    <form asp-action="UpdateReservation" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="@reservations.ReservationId" />
+                        <button type="submit" class="btn btn-secondary">Update</button>
+                    </form>
+                    <form asp-action="DeleteReservation" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="@reservations.ReservationId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="table-titles">Locations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="id-column">LocationId</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th class="actions-column">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var location in Model.Locations) {
+            <tr>
+                <td class="id-column">@location.LocationId</td>
+                <td>@location.Image</td>
+                <td>@location.Name</td>
+                <td>@location.Address</td>
+                <td class="actions-column">
+                    <form asp-action="UpdateLocation" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="@location.LocationId" />
+                        <button type="submit" class="btn btn-secondary">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex">
+    <h2 class="table-titles">Promotions</h2>
+    <form asp-action="Create" method="get">
+        <button type="submit" class="btn btn-primary">Add Promotion</button>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="id-column">PromotionId</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Discount Price</th>
+            <th>Date</th>
+            <th class="actions-column">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var promo in Model.Promotions) {
+            <tr>
+                <td class="id-column">@promo.PromotionId</td>
+                <td>@promo.Image</td>
+                <td>@promo.Name</td>
+                <td class="description-cell">@promo.Description</td>
+                <td>$@promo.Discount</td>
+                <td>@promo.DateTime</td>
+                <td class="actions-column">
+                    <form asp-action="UpdatePromo" method="get" style="display: inline;">
+                        <input type="hidden" name="id" value="2" />
+                        <button type="submit" class="btn btn-secondary">Update</button>
+                    </form>
+                    <form asp-action="DeletePromo" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="@promo.PromotionId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

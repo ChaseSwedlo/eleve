@@ -28,5 +28,10 @@ namespace RestaurantProject.DAL {
                 _context.SaveChanges();
             }
         }
+
+        public void UpdateReservation(Reservation reservation) {
+            _context.Reservations.Update(reservation);
+            _context.SaveChanges();
+        }
     }
 }

@@ -20,3 +20,46 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.table td:last-child {
+    text-align: right;
+}
+
+.table td.description-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.table {
+    margin-bottom: 50px;
+}
+
+.table-titles {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.table-titles:last-of-type {
+    margin-right: 20px;
+}
+
+.id-column {
+    width: 140px;
+}
+
+.actions-column {
+    width: 169px;
+}
+
+.m-text-input {
+    width: 275px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.m-center-form {
+    display: grid;
+    place-items: center;
+}

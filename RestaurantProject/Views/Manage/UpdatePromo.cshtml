@@ -1,1 +1,34 @@
 ﻿@model Promotion;
+
+<h2 class="display-5 text-center">Update Promotion</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "m-center-form" })) {
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Image, new { @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.Image, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "control-label" })
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @rows = 4, @cols = 31 })
+        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Discount, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Discount, new { @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.Discount, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group m-date-time">
+        @Html.LabelFor(m => m.DateTime, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.DateTime, "{0:yyyy-MM-ddTHH:mm}", new { @type = "datetime-local", @class = "form-control m-text-input" })
+        @Html.ValidationMessageFor(m => m.DateTime, "", new { @class = "text-danger" })
+    </div>
+
+    @Html.HiddenFor(m => m.PromotionId)
+    <button type="submit" class="btn btn-primary">Update</button>
+}
