@@ -1,1 +1,91 @@
 ﻿@model MenuViewModel;
+
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<div class="row">
+
+
+	<div class="col">
+
+		<h2>Appetizers</h2>
+
+		@* display appetizers *@
+
+		@foreach (var item in Model.Appetizers)
+		{
+			<div>
+				@Html.DisplayFor(modelItem => item.Name)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Description)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Price)
+			</div>
+		}
+
+
+
+		<h2>Deserts</h2>
+
+		@* display appetizers *@
+
+		@foreach (var item in Model.Deserts)
+		{
+			<div>
+				@Html.DisplayFor(modelItem => item.Name)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Description)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Price)
+			</div>
+		}
+
+
+
+	</div>
+
+	<div class="col">
+
+		<h2>Mains</h2>
+
+		@* display appetizers *@
+
+		@foreach (var item in Model.Entrees)
+		{
+			<div>
+				@Html.DisplayFor(modelItem => item.Name)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Description)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Price)
+			</div>
+		}
+		<h2>Drinks</h2>
+
+		@* display appetizers *@
+
+		@foreach (var item in Model.Drinks)
+		{
+			<div>
+				@Html.DisplayFor(modelItem => item.Name)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Description)
+			</div>
+			<div>
+				@Html.DisplayFor(modelItem => item.Price)
+			</div>
+		}
+	</div>
+
+</div>
+
+
