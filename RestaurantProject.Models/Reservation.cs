@@ -5,6 +5,6 @@
         public string Name { get; set; }
         public int NumOfPeople { get; set; }
         public DateTime ReservationDateTime { get; set; }
-        public virtual Location Location { get; set; } = null!;
+        public virtual Location Location { get; set; }
     }
 }
