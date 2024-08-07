@@ -34,23 +34,35 @@
 
 <hr />
 
-@* location list *@
-<table>
-    @foreach (var location in Model.Locations)
-    {
-        <thead>
-            <tr>
-                <th>@location.Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>@location.Address</td>
-            </tr>
-            <tr>
-                <td><img src="@location.Image" alt="@location.Name" /></td>
-            </tr>
-        </tbody>
-    }
-</table>
-
+<section class="location-section">
+    <h1>Our Locations</h1>
+    <div class="l-container">
+        <div class="location-info">
+            <h2>@Model.Locations[0].Name</h2>
+            <h3>Address:</h3>
+            <p>@Model.Locations[0].Address</p>
+            <h3>Phone:</h3>
+            <p>(204) 555-0123</p>
+            <h3>Email:</h3>
+            <p>winnipeg@elevarestaurant.com</p>
+            <h3>Hours:</h3>
+            <p>Monday - Sunday: 11:00 AM - 10:00 PM</p>
+            <figure style="background-image: url('@Model.Locations[0].Image');">
+            </figure>
+        </div>
+        <div class="l-line"></div>
+        <div class="location-info">
+            <h2>@Model.Locations[1].Name</h2>
+            <h3>Address:</h3>
+            <p>@Model.Locations[1].Address</p>
+            <h3>Phone:</h3>
+            <p>(204) 444-0123</p>
+            <h3>Email:</h3>
+            <p>toronto@elevarestaurant.com</p>
+            <h3>Hours:</h3>
+            <p>Monday - Sunday: 11:00 AM - 10:00 PM</p>
+            <figure style="background-image: url('@Model.Locations[1].Image');">
+            </figure>
+        </div>
+    </div>
+</section>

@@ -1,3 +1,36 @@
 ﻿@model MainViewModel;
+<section class="chef-section">
+    <h1>Chefs’ Reviews: A Taste of Excellence</h1>
+    <div class="review-grid">
+        @foreach(var review in Model.Testimonials) {
+            <div>
+                <p>
+                   @review.Review;
+                </p>
+                <div class="chef-info">
+                    <figure>
+                        <img src=@review.ChefImage />
+                    </figure>
+                    <h3>@review.ChefName</h3>
+                </div>
+            </div>
+        }
+    </div>
 
+</section>
+<div class="horizontal-line"></div>
+<section class="our-story">
+    <h1>Our Story</h1>
+    <div class="os-container">
+        <figure class="os-image">
+            <img src="https://s3-alpha-sig.figma.com/img/dfbb/a45b/deeb920f63273e0d66bfa53ac2ef81ab?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YEOntY1pm735t47PAtwVqPeVebNCXm7~hhvdC9zxdEgB5PonoY1SYjdP~bNKAqdMav4BFmIb5IMlcyfP0lkfbc2c~6FumSaCZp~PBmov4p1tsxhYBRuLAcUE7W3eti4bxnmUONtSRN0qvz8tyVVRZSfjaq5AHYJFHOcBn~Js~qYdSGLgI9OurQTccj9xYOkYxPzJjLf8U-TewPqEVxLks1C6PrWs7Wylhb7vYwq1zBKY3RoXhhUWExs~Jx4MFGe61W~M5crZC~5m~dWIj8UUYJoSgqJ~AfKkYKSX4mSlXG0H0Olh8EzeRSJv8ti1mvndXRk2fJ4oUDc47y9HMS2CQg__" />
+        </figure>
+        <div class="os-text">
+            <p>
+                Founded in 1941, Elevé has a rich history rooted in a passion for  exceptional dining. What began as a small bistro has transformed into a  celebrated 5-star restaurant, renowned for its commitment to culinary  excellence and innovative gastronomy. Over the decades, we have remained  dedicated to sourcing the finest local ingredients and crafting dishes  that reflect both tradition and creativity. Our journey is marked by a  relentless pursuit of flavor and artistry, ensuring that every meal is a  memorable experience. As we continue to evolve, we invite you to join  us in celebrating the legacy of Elevé, where every dish tells a story  and every visit is an occasion to savor.
 
+                As  we look to the future, we remain committed to our legacy while  continuously exploring new horizons in the culinary arts. We invite you  to join us at Elevé, where passion, creativity, and a commitment to  excellence come together to create an unparalleled dining experience.
+            </p>
+        </div>
+    </div>
+</section>
