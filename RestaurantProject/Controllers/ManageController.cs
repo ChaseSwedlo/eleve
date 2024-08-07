@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RestaurantProject.BLL;
 using RestaurantProject.Models;
 
 namespace RestaurantProject.Controllers {
+    [Authorize(Roles = "Admin")]
     public class ManageController : Controller {
         /*
          * Create-Read-Update-Delete Promotions - Create-read-update-delete done
@@ -35,6 +37,11 @@ namespace RestaurantProject.Controllers {
 
         public IActionResult DeleteReservation(int id) {
             _reservationService.DeleteReservation(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeletePromo(int id) {
+            _promotionService.DeletePromotion(id);
             return RedirectToAction("Index");
         }
 
