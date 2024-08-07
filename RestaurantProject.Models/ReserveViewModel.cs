@@ -10,6 +10,6 @@ namespace RestaurantProject.Models {
         public int NumOfPeople { get; set; }
         [Required]
         public DateTime ReservationDateTime { get; set; }
-        public List<Location> Locations { get; set; }
+        public List<Location> Locations { get; set; } = new List<Location>();
     }
 }

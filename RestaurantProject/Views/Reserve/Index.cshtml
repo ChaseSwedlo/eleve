@@ -1,1 +1,56 @@
 ﻿@model ReserveViewModel;
+
+<h2>Reservations</h2>
+<p>@TempData["Message"]</p>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.Label("Name", "Name", new { @class = "control-label" })
+        @Html.TextBoxFor(m=>m.Name)
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div>
+        @Html.Label("LocationId", "Location", new { @class = "control-label" })
+        @Html.DropDownListFor(m => m.LocationId, new SelectList(Model.Locations, "LocationId", "Name"), "Select Location")
+        @Html.ValidationMessageFor(m => m.LocationId, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div>
+        @Html.Label("NumOfPeople", "Number of People", new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.NumOfPeople)
+        @Html.ValidationMessageFor(m => m.NumOfPeople, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div>
+        @Html.Label("ReservationDateTime", "Date", new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.ReservationDateTime, "{0:yyyy-MM-ddTHH:mm}", new { type = "datetime-local" })
+        @Html.ValidationMessageFor(m => m.ReservationDateTime, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <button type="submit">Find A Table</button>
+}
+
+<hr />
+
+@* location list *@
+<table>
+    @foreach (var location in Model.Locations)
+    {
+        <thead>
+            <tr>
+                <th>@location.Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@location.Address</td>
+            </tr>
+            <tr>
+                <td><img src="@location.Image" alt="@location.Name" /></td>
+            </tr>
+        </tbody>
+    }
+</table>
+
