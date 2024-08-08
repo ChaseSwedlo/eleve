@@ -1,5 +1,6 @@
 ﻿@model ManageViewModel;
-
+<div class="container manage-page">
+    <a href="@Url.Action("Index", "Home")" class="home-button">Home</a>
 <h2 class="table-titles">Reservations</h2>
 
 <table class="table">
@@ -80,7 +81,7 @@
             <th>Image</th>
             <th>Name</th>
             <th>Description</th>
-            <th>Discount Price</th>
+            <th>Price</th>
             <th>Date</th>
             <th class="actions-column">Actions</th>
         </tr>
@@ -96,7 +97,7 @@
                 <td>@promo.DateTime</td>
                 <td class="actions-column">
                     <form asp-action="UpdatePromo" method="get" style="display: inline;">
-                        <input type="hidden" name="id" value="2" />
+                        <input type="hidden" name="id" value="@promo.PromotionId" />
                         <button type="submit" class="btn btn-secondary">Update</button>
                     </form>
                     <form asp-action="DeletePromo" method="post" style="display: inline;">
@@ -108,3 +109,4 @@
         }
     </tbody>
 </table>
+</div>

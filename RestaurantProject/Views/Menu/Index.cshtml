@@ -1,9 +1,42 @@
-﻿@model MenuViewModel;
+﻿@using Microsoft.AspNetCore.Identity
 
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model MenuViewModel;
+<link rel="stylesheet" href="./css/menu.css">
+<header>
+	<div class="menu-header-overlay"></div>
+	<div class="container header-content">
+		<div class="header-top">
+			<div class="hamburger-container">
+				<div class="hamburger">
+					<span class="hamburger-line"></span>
+					<span class="hamburger-line"></span>
+				</div>
+				<div class="hamburger-menu">
+					<a href="@Url.Action("Index", "Home")" class="nav-link">Home</a>
 
-@{
-	ViewBag.Title = "Index";
-}
+					<a href="@Url.Action("Index", "Reserve")" class="nav-link">Find a Table</a>
+					<a href="@Url.Action("Index", "Menu")" class="nav-link">Our Menu</a>
+					@if (SignInManager.IsSignedIn(User)) {
+						<form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+							<button id="logout" type="submit" class="nav-link logout-btn">Logout</button>
+						</form>
+					} else {
+						<a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+					}
+					<a href="@Url.Action("Index", "Manage")" class="nav-link">Management</a>
+				</div>
+			</div>
+			<a href="index.html" class="logo serif-font">Elevé</a>
+			<button class="find-a-table-btn"><a class="reserve-header-btn" href="@Url.Action("Index", "Reserve")">Find a Table</a></button>
+		</div>
+		<div class="header-text serif-font">
+			<h1>OUR MENU</h1>
+			<p>Where Every Dish Tells a Story</p>
+		</div>
+	</div>
+</header>
 
 <div class="row menu-wrapper">
 	<div class="col">

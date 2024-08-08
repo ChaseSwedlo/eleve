@@ -33,9 +33,9 @@ namespace RestaurantProject.Controllers {
                 var newReservation = new Reservation
                 {
                     Name = viewModel.Name,
-                    NumOfPeople = viewModel.NumOfPeople,
+                    NumOfPeople = viewModel.NumOfPeople ?? 0,
                     Location = _locationService.GetLocation(viewModel.LocationId),
-                    ReservationDateTime = viewModel.ReservationDateTime
+                    ReservationDateTime = viewModel.ReservationDateTime ?? DateTime.Now
                 };
 
                 _reservationService.AddReservation(newReservation);

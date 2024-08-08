@@ -1,38 +1,87 @@
-﻿@model ReserveViewModel;
+﻿@using Microsoft.AspNetCore.Identity
 
-<h2>Reservations</h2>
-<p>@TempData["Message"]</p>
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
-@using (Html.BeginForm())
-{
-    <div>
-        @Html.Label("Name", "Name", new { @class = "control-label" })
-        @Html.TextBoxFor(m=>m.Name)
-        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <div>
-        @Html.Label("LocationId", "Location", new { @class = "control-label" })
-        @Html.DropDownListFor(m => m.LocationId, new SelectList(Model.Locations, "LocationId", "Name"), "Select Location")
-        @Html.ValidationMessageFor(m => m.LocationId, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <div>
-        @Html.Label("NumOfPeople", "Number of People", new { @class = "control-label" })
-        @Html.TextBoxFor(m => m.NumOfPeople)
-        @Html.ValidationMessageFor(m => m.NumOfPeople, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <div>
-        @Html.Label("ReservationDateTime", "Date", new { @class = "control-label" })
-        @Html.TextBoxFor(m => m.ReservationDateTime, "{0:yyyy-MM-ddTHH:mm}", new { type = "datetime-local" })
-        @Html.ValidationMessageFor(m => m.ReservationDateTime, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <button type="submit">Find A Table</button>
-}
+@model ReserveViewModel;
 
-<hr />
+<link rel="stylesheet" href="./css/reservations.css">
+
+<header>
+    <div class="menu-header-overlay"></div>
+    <div class="container header-content">
+        <div class="header-top">
+            <div class="hamburger-container">
+                <div class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+                <div class="hamburger-menu">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link">Home</a>
+
+                    <a href="@Url.Action("Index", "Reserve")" class="nav-link">Find a Table</a>
+                    <a href="@Url.Action("Index", "Menu")" class="nav-link">Our Menu</a>
+                    @if (SignInManager.IsSignedIn(User)) {
+                        <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button id="logout" type="submit" class="nav-link logout-btn">Logout</button>
+                        </form>
+                    } else {
+                        <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                    }
+                    <a href="@Url.Action("Index", "Manage")" class="nav-link">Management</a>
+                </div>
+            </div>
+            <a href="index.html" class="logo serif-font">Elevé</a>
+            <button class="find-a-table-btn"><a class="reserve-header-btn" href="@Url.Action("Index", "Reserve")">Find a Table</a></button>
+        </div>
+        <div class="header-text serif-font">
+            <h1>FIND A TABLE</h1>
+            <p>Experience Fine Dining at Its Best</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/form.css" asp-append-version="true" />
+
+    <p class="reserve-heading">Reservations</p>
+    <p class="reserve-msg">@TempData["Message"]</p>
+
+    <div class="reserve-form">
+        @using (Html.BeginForm()) {
+            <div>
+                @Html.Label("Name", "Name", new { @class = "reserve-label" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "reserve-danger" })
+                @Html.TextBoxFor(m => m.Name, new { placeholder = "Enter Name" })
+            </div>
+
+            <div>
+                @Html.Label("LocationId", "Location", new { @class = "reserve-label" })
+                @Html.ValidationMessageFor(m => m.LocationId, "", new { @class = "reserve-danger" })
+                @Html.DropDownListFor(m => m.LocationId, new SelectList(Model.Locations, "LocationId", "Name"), "Select Location")
+            </div>
+
+            <div>
+                @Html.Label("NumOfPeople", "Number of People", new { @class = "reserve-label" })
+                @Html.ValidationMessageFor(m => m.NumOfPeople, "", new { @class = "reserve-danger" })
+                @Html.TextBoxFor(m => m.NumOfPeople, new { placeholder = "Enter Number" })
+            </div>
+
+            <div>
+                @Html.Label("ReservationDateTime", "Date", new { @class = "reserve-label" })
+                @Html.ValidationMessageFor(m => m.ReservationDateTime, "", new { @class = "reserve-danger" })
+                @Html.TextBoxFor(m => m.ReservationDateTime, "{0:yyyy-MM-ddTHH:mm}", new { type = "datetime-local" })
+            </div>
+
+            <button type="submit" class="reserve-btn">Find A Table</button>
+        }
+    </div>
+
 
 <section class="location-section">
     <h1>Our Locations</h1>
@@ -66,3 +115,4 @@
         </div>
     </div>
 </section>
+</div>
