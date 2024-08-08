@@ -448,6 +448,6 @@ footer a {
 }
 
 .reserve-header-btn:hover {
-    color: #fff;
-    opacity: 0.8;
+    color: #000;
+    background-color: #fff;
 }
