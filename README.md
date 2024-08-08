@@ -15,7 +15,7 @@
 - **Reservation Form**: Allows users to add a new reservation.
 - **Location Section**: Shows available locations, retrieved from the `locations` table.
 
-### Manage
+### Manage (Admin only)
 - **Reservations**
   - **Read**: Displays all current reservations.
   - **Update**: Allows updating of existing reservations.
@@ -27,3 +27,8 @@
   - **Read**: Displays current promotions.
   - **Update**: Allows updating of current promotions.
   - **Delete**: Allows deletion of current promotions.
+
+***
+##### Admin Login Info
+- email: `admin@admin.com`
+- password: `Test1234,`

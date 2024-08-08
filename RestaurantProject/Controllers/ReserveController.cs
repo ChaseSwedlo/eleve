@@ -20,7 +20,7 @@ namespace RestaurantProject.Controllers {
         {
             var model = new ReserveViewModel
             {
-                Locations = _locationService.GetLocations() // Ensure Locations is not null
+                Locations = _locationService.GetLocations()
             };
             return View(model);
         }
@@ -42,7 +42,7 @@ namespace RestaurantProject.Controllers {
 
                 var model = new ReserveViewModel
                 {
-                    Locations = _locationService.GetLocations() ?? new List<Location>() // Ensure Locations is not null
+                    Locations = _locationService.GetLocations() ?? new List<Location>()
                 };
 
                 TempData["Message"] = $"Your reservation is on {newReservation.ReservationDateTime} at {newReservation.Location.Name}";
@@ -50,8 +50,7 @@ namespace RestaurantProject.Controllers {
                 return View(model);
             }
 
-            // If ModelState is invalid, reload locations and return the view with errors
-            viewModel.Locations = _locationService.GetLocations(); // Ensure Locations is not null
+            viewModel.Locations = _locationService.GetLocations();
             return View(viewModel);
         }
 

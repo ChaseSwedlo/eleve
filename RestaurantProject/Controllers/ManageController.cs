@@ -7,11 +7,9 @@ namespace RestaurantProject.Controllers {
     [Authorize(Roles = "Admin")]
     public class ManageController : Controller {
         /*
-         * Create-Read-Update-Delete Promotions - Create-read-update-delete done
-         * Read-Delete Reservations - done
-         * Read-Update Locations - done
-         * 
-         * adding update reservations
+         * Create-Read-Update-Delete Promotions
+         * Read-Delete-Update Reservations
+         * Read-Update Locations
          */
         private readonly ReservationService _reservationService;
         private readonly PromotionService _promotionService;
