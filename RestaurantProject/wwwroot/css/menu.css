@@ -1,0 +1,103 @@
+header {
+  height: 70svh;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../media/hero_banner_menu_page.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+    header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+.header-content {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.header-text {
+  gap: 0px;
+}
+
+/* =====================Promotions Section===================== */
+
+.promo-flexbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.promo-item-container {
+  background-color: #dddddd;
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 15rem;
+}
+
+.promo-item-img {
+  background-size: cover;
+  background-position: center;
+  height: 15rem;
+}
+
+.promo-item-container-1 .promo-item-img {
+  background-image: url('/assets/media/promotion_1.jpg');
+}
+.promo-item-container-2 .promo-item-img {
+  background-image: url('/assets/media/promotion_2.jpg');
+}
+.promo-item-container-3 .promo-item-img {
+  background-image: url('/assets/media/promotion_3.jpg');
+}
+.promo-item-container-4 .promo-item-img {
+  background-image: url('/assets/media/promotion_4.jpg');
+}
+.promo-item-container-5 .promo-item-img {
+  background-image: url('/assets/media/promotion_5.jpg');
+}
+.promo-item-container-6 .promo-item-img {
+  background-image: url('/assets/media/promotion_6.jpg');
+}
+
+.promo-item-line {
+  margin-top: 20px;
+}
+
+.promo-item-name {
+  font-size: 2rem;
+}
+
+.promo-item-description, .price-valid-until {
+  font-size: 1.3rem;
+}
+
+.promo-price-container {
+  display: flex;
+  align-items: center;
+}
+
+.promo-price {
+  font-size: 2rem;
+}
