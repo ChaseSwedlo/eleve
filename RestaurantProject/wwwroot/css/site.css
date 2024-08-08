@@ -69,7 +69,7 @@ body {
 footer {
     background-color: #8B1313;
     color: #ffffff;
-    padding: 83px 0;
+    padding: 30px 0;
     text-align: left;
 }
 
@@ -82,6 +82,8 @@ footer {
 .footer-title h2 {
     font-weight: 700;
     font-size: 54px;
+    font-family: "Kaisei Tokumin", serif;
+    margin-top: -10px;
 }
 
 .footer-box div {
@@ -105,6 +107,7 @@ footer a {
 
 .footer-logos {
     align-items: flex-end;
+    gap: 5px;
 }
 
 .footer-logos p {
@@ -114,6 +117,9 @@ footer a {
 
 .footer-cc {
     margin-top: 50px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-size: 22px;
 }
 
 .icons {
