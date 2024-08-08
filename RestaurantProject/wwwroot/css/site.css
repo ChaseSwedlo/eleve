@@ -64,6 +64,8 @@ body {
     place-items: center;
 }
 
+/* ======Footer====== */
+
 footer {
     background-color: #8B1313;
     color: #ffffff;
@@ -105,27 +107,41 @@ footer a {
     align-items: flex-end;
 }
 
-    .footer-logos p {
-        display: flex;
-        align-items: center;
-    }
+.footer-logos p {
+    display: flex;
+    align-items: center;
+}
 
 .footer-cc {
     margin-top: 50px;
 }
 
+.icons {
+    width: 20px;
+    height: 20px;
+}
 
+.xicon, .insta {
+    margin-bottom: 11px;
+}
+
+.fb {
+    width: 17px;
+    padding-left: 3px;
+}
+
+/* ======Our Story====== */
 
 .our-story {
-    padding: 60px 0;
+    padding: 68px 0;
     text-align: center;
 }
 
-    .our-story h1 {
-        font-size: 54px;
-        font-weight: 700;
-        margin-bottom: 50px;
-    }
+.our-story h1 {
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
 
 .os-container {
     display: flex;
@@ -140,21 +156,21 @@ footer a {
     flex: 1;
 }
 
-    .os-image img {
-        width: 100%;
-        height: auto;
-    }
+.os-image img {
+    width: 100%;
+    height: auto;
+}
 
 .os-text {
     flex: 1;
     text-align: left;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 400;
     line-height: 27px;
     color: #333;
 }
 
-
+/* ======Locations====== */
 
 .location-section {
     padding: 60px 110px;
@@ -167,40 +183,41 @@ footer a {
 
 .l-line {
     width: 2px;
-    height: 956px;
+    height: 850px;
     background-color: #000000;
 }
 
 .location-section h1 {
     font-size: 54px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .location-section h2 {
     font-size: 43px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    color: #8B1313;
 }
 
 .location-section h3 {
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 600;
 }
 
 .location-section p {
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .location-info {
-    width: 490px;
+    width: 380px;
 }
 
 .location-section figure {
-    width: 490px;
-    height: 460px;
+    width: 380px;
+    height: 380px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -213,60 +230,182 @@ footer a {
     gap: 10px;
 }
 
-    .review-grid > div {
-        padding: 20px;
-    }
+/* ======Chef Reviews====== */
 
-.chef-section {
-    padding: 60px 0;
+.review-grid > div {
+    padding: 20px;
 }
 
-    .chef-section h1 {
-        font-size: 54px;
-        text-align: center;
-        margin-bottom: 60px;
-    }
+.chef-section {
+    padding: 68px 0;
+}
 
-    .chef-section figure {
-        width: 85px;
-        height: 85px;
-        background-color: #ffffff;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
+.chef-section h1 {
+    font-size: 54px;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .chef-section figure img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 120%;
-            height: 120%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-        }
+.chef-section figure {
+    width: 85px;
+    height: 85px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 
-    .chef-section p {
-        font-size: 18px;
-    }
+.chef-section figure img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.chef-section p {
+    font-size: 18px;
+}
 
 .chef-info {
     width: 100%;
     display: flex;
 }
 
-    .chef-info h3 {
-        font-size: 22px;
-        margin-left: 15px;
-        line-height: 85px;
-        color: #8B1313;
-    }
+.chef-info h3 {
+    font-size: 22px;
+    margin-left: 15px;
+    line-height: 85px;
+    color: #8B1313;
+}
 
 .horizontal-line {
     width: 100%;
     height: 3px;
     background-color: #000000;
+}
+
+.login-page-section {
+    height: 100svh;
+    display: grid;
+    place-items: center;
+}
+
+.logout-btn {
+    background: none !important;
+    border: none !important;
+}
+
+.manage-page {
+    padding: 60px 0;
+}
+
+.create-page {
+    height: 100svh;
+    display: grid;
+    place-items: center;
+}
+
+.home-button {
+    width: 100svw;
+    text-align: center;
+}
+
+/* =====================Promotions Section===================== */
+
+.promo-title {
+    text-align: center;
+    margin: 5rem 0;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.promo-flexbox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.promo-item-container {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 15rem;
+}
+
+.promo-item-img {
+    background-size: cover;
+    background-position: center;
+    height: 23rem;
+}
+
+.promo-item-line {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid var(--text-black);
+}
+
+.promo-item-line:nth-of-type(2) {
+    margin-top: 8px;
+}
+
+.promo-item-name {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.promo-item-description, .price-valid-until {
+    font-size: 1.3rem;
+}
+
+.promo-item-description {
+    height: 6rem;
+}
+
+.price-valid-until {
+    margin-top: 2px;
+}
+
+.promo-price-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.promo-price {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.promo-discount {
+    color: var(--text-white);
+    background-color: var(--primary);
+    padding: 0 7px;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.promo-section-bottom-line {
+    margin: 5.5rem 0;
+    border: none;
+    border-top: 5px solid var(--text-black);
+}
+
+.promotions-section {
+    margin-bottom: 68px;
+}
+
+.reserve-header-btn {
+    text-decoration: none;
+    color: #fff;
+    transition-duration: 0.2s;
+}
+
+.reserve-header-btn:hover {
+    color: #fff;
+    opacity: 0.8;
 }

@@ -1,1 +1,74 @@
 ﻿
+.reserve-heading {
+    font-size: 54px;
+    text-align: center;
+    margin-top: 43.8px;
+    font-family: Kaisei Tokumin;
+}
+
+.reserve-msg {
+    color: #8B1313;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reserve-form {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-content: center;
+    border-bottom: 4.20px solid #000;
+}
+
+.reserve-label {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 25.34px;
+}
+
+.reserve-danger {
+    font-family: Smooch Sans;
+    color: red;
+    font-size: 18px;
+}
+
+input[type="text"], select {
+    margin-top: 13.24px;
+    width: 507px;
+    height: 72px;
+    padding: 8px;
+    border: 1px solid #555;
+    color: #000;
+    font-size: 21px;
+    display: block;
+    background: #fff;
+}
+
+input[type="datetime-local"] {
+    margin-top: 13.24px;
+    width: 507px;
+    height: 72px;
+    padding: 8px;
+    border: 1px solid #555;
+    color: #000;
+    font-size: 21px;
+    display: block;
+    background: #fff;
+}
+
+.reserve-btn {
+    font-family: Smooch Sans;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #8B1313;
+    color: #fff;
+    padding: 15px, 38px, 15px, 38px;
+    gap: 11px;
+    width: 123px;
+    height: 43px;
+    display: block;
+    margin: 40px auto 100px auto;
+    border: none;
+}

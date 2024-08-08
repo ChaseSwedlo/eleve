@@ -1,0 +1,41 @@
+/* ======HEADER====== */
+
+header {
+  height: 100svh;
+}
+
+header video {
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  position: relative;
+  width: 100%;
+}
+
+.video-overlay {
+  background-color: rgba(0, 0, 0, 0.472);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.header-text h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header-button {
+  font-family: "Smooch Sans", sans-serif;
+  background-color: var(--primary);
+  color: var(--text-white);
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 0;
+  cursor: pointer;
+}
+

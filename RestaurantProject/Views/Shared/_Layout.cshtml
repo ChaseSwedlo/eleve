@@ -8,38 +8,23 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/form.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RestaurantProject.styles.css" asp-append-version="true" />
-    @* added favicon manuualy *@
     <link rel="icon" type="image/x-icon" href="~/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Smooch+Sans:wght@100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <script type="module" src="./js/app.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RestaurantProject</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
     <footer class="">
         <div class="container">
             <section class="footer-box">
@@ -47,9 +32,9 @@
                     <h2>Elevé</h2>
                 </div>
                 <div class="footer-links">
-                    <a href="#">Home</a>
-                    <a href="#">Find a Table</a>
-                    <a href="#">Menu</a>
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                    <a href="@Url.Action("Index", "Reserve")">Find a Table</a>
+                    <a href="@Url.Action("Index", "Menu")">Menu</a>
                 </div>
                 <div class="footer-info">
                     <p>145 Maple Ridge Road, Winnipeg, MB R2V 1N3, Canada</p>
@@ -57,9 +42,11 @@
                     <p>info@elevé.com</p>
                 </div>
                 <div class="footer-logos">
-                    <p>XX</p>
-                    <p>IN</p>
-                    <p>FB</p>
+                    <figure class="icons">
+                        <img class="fb" src="./media/social_facebook.png" />
+                    </figure>
+                    <img class="icons insta" src="./media/social_instagram.png" />
+                    <img class="icons xicon" src="./media/social_x.png" />
                 </div>
             </section>
             <p class="footer-cc">&copy; 2024 / ELEVE</p>

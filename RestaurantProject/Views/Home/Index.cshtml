@@ -1,8 +1,101 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Identity
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model MainViewModel;
+<header>
+    <div class="video-overlay"></div>
+    <video src="./media/hero_banner_vid.mp4" autoplay="" loop=""></video>
+    <div class="container header-content">
+        <div class="header-top">
+            <div class="hamburger-container">
+                <div class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+                <div class="hamburger-menu">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link">Home</a>
+
+                    <a href="@Url.Action("Index", "Reserve")" class="nav-link">Find a Table</a>
+                    <a href="@Url.Action("Index", "Menu")" class="nav-link">Our Menu</a>
+                    @if (SignInManager.IsSignedIn(User)) {
+                        <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button id="logout" type="submit" class="nav-link logout-btn">Logout</button>
+                        </form>
+                    } else {
+                        <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                    }
+                    <a href="@Url.Action("Index", "Manage")" class="nav-link">Management</a>
+                </div>
+            </div>
+            <a href="index.html" class="logo serif-font h1-link">Elevé</a>
+            <button class="find-a-table-btn"><a class="reserve-header-btn" href="@Url.Action("Index", "Reserve")">Find a Table</a></button>
+        </div>
+        <div class="header-text serif-font">
+            <h1>ELEVATE YOUR PALATE</h1>
+            <p>
+                Experience the epitome of luxury dining at Elevé, where every detail is meticulously curated to create an
+                unforgettable evening of sublime flavors, exceptional service, and refined ambiance.
+            </p>
+            <button class="header-button ">View Menu</button>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="promotions-section">
+        <h1 class="promo-title serif-font">Tempting Deals</h1>
+        <div class="container promo-flexbox">
+       @foreach (var promo in Model.Promotions) {
+            
+                <div class="promo-item-container promo-item-container-1">
+                    <div class="promo-item-img" style="background-image: url(@promo.Image);"></div>
+                    <hr class="promo-item-line">
+                    <h1 class="promo-item-name">@promo.Name</h1>
+                    <p class="promo-item-description">@promo.Description</p>
+                    <div class="price-valid-until">Price valid until @promo.DateTime.ToShortDateString()</div>
+                    <hr class="promo-item-line">
+                    <div class="promo-price-container">
+                        <h1 class="promo-price">$@promo.Discount</h1>
+                        <div class="promo-discount">60% off</div>
+                    </div>
+            </div>
+        }
+        </div>
+    </div>
+    <div class="horizontal-line"></div>
+    <section class="chef-section">
+        <h1>Chefs’ Reviews: A Taste of Excellence</h1>
+        <div class="review-grid">
+            @foreach (var review in Model.Testimonials) {
+                <div>
+                    <p>
+                        @review.Review;
+                    </p>
+                    <div class="chef-info">
+                        <figure>
+                            <img src=@review.ChefImage />
+                        </figure>
+                        <h3>@review.ChefName</h3>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </section>
+    <div class="horizontal-line"></div>
+    <section class="our-story">
+        <h1>Our Story</h1>
+        <div class="os-container">
+            <figure class="os-image">
+                <img src="https://s3-alpha-sig.figma.com/img/dfbb/a45b/deeb920f63273e0d66bfa53ac2ef81ab?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YEOntY1pm735t47PAtwVqPeVebNCXm7~hhvdC9zxdEgB5PonoY1SYjdP~bNKAqdMav4BFmIb5IMlcyfP0lkfbc2c~6FumSaCZp~PBmov4p1tsxhYBRuLAcUE7W3eti4bxnmUONtSRN0qvz8tyVVRZSfjaq5AHYJFHOcBn~Js~qYdSGLgI9OurQTccj9xYOkYxPzJjLf8U-TewPqEVxLks1C6PrWs7Wylhb7vYwq1zBKY3RoXhhUWExs~Jx4MFGe61W~M5crZC~5m~dWIj8UUYJoSgqJ~AfKkYKSX4mSlXG0H0Olh8EzeRSJv8ti1mvndXRk2fJ4oUDc47y9HMS2CQg__" />
+            </figure>
+            <div class="os-text">
+                <p>
+                    Founded in 1941, Elevé has a rich history rooted in a passion for  exceptional dining. What began as a small bistro has transformed into a  celebrated 5-star restaurant, renowned for its commitment to culinary  excellence and innovative gastronomy. Over the decades, we have remained  dedicated to sourcing the finest local ingredients and crafting dishes  that reflect both tradition and creativity. Our journey is marked by a  relentless pursuit of flavor and artistry, ensuring that every meal is a  memorable experience. As we continue to evolve, we invite you to join  us in celebrating the legacy of Elevé, where every dish tells a story  and every visit is an occasion to savor.
+
+                    As  we look to the future, we remain committed to our legacy while  continuously exploring new horizons in the culinary arts. We invite you  to join us at Elevé, where passion, creativity, and a commitment to  excellence come together to create an unparalleled dining experience.
+                </p>
+            </div>
+        </div>
+    </section>
 </div>

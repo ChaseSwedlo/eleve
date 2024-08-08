@@ -7,9 +7,10 @@ namespace RestaurantProject.Models {
         [Required]
         public string Name { get; set; }
         [Required]
-        public int NumOfPeople { get; set; }
+        [Range(1, 16, ErrorMessage = "Max party of 16")]
+        public int? NumOfPeople { get; set; }
         [Required]
-        public DateTime ReservationDateTime { get; set; }
+        public DateTime? ReservationDateTime { get; set; } = DateTime.Now;
         public List<Location> Locations { get; set; } = new List<Location>();
     }
 }
