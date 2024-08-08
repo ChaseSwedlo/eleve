@@ -66,9 +66,10 @@ header {
 
 .find-a-table-btn {
     background-color: transparent;
-    border: 1px solid var(--text-white);
+    /*border: 1px solid var(--text-white);*/
+    border: none;
     color: var(--text-white);
-    padding: 1px 10px;
+    /*padding: 1px 10px;*/
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
@@ -99,6 +100,10 @@ header {
     left: 50%;
     transform: translateX(-50%);
     text-decoration: none;
+    color: var(--text-white);
+}
+
+.logo:hover {
     color: var(--text-white);
 }
 
