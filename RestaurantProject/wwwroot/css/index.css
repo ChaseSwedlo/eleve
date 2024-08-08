@@ -37,5 +37,11 @@ header video {
   padding: 0.4rem 1rem;
   border-radius: 0;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.header-button:hover {
+    background-color: #fff;
+    color: var(--primary);
+    font-weight: 500;
+}
