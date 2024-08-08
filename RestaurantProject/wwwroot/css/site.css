@@ -250,8 +250,8 @@ footer a {
 }
 
 .chef-section figure {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
     background-color: #ffffff;
     border-radius: 50%;
     overflow: hidden;
@@ -278,14 +278,29 @@ footer a {
 .chef-info {
     width: 100%;
     display: flex;
+    margin-top: 30px;
+}
+
+.chef-name-title {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    width: 20rem;
+    justify-content: center;
+    padding-left: 15px;
 }
 
 .chef-info h3 {
     font-size: 22px;
-    margin-left: 15px;
-    line-height: 85px;
     color: #8B1313;
+    font-weight: 650;
 }
+
+.chef-info p {
+    margin-bottom: 0;
+}
+
+
 
 .horizontal-line {
     width: 100%;
