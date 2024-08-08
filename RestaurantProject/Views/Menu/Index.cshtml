@@ -28,7 +28,7 @@
 					<a href="@Url.Action("Index", "Manage")" class="nav-link">Management</a>
 				</div>
 			</div>
-			<a href="index.html" class="logo serif-font">Elevé</a>
+			<a href="@Url.Action("Index", "Home")" class="logo serif-font">Elevé</a>
 			<button class="find-a-table-btn"><a class="reserve-header-btn" href="@Url.Action("Index", "Reserve")">Find a Table</a></button>
 		</div>
 		<div class="header-text serif-font">
@@ -38,86 +38,44 @@
 	</div>
 </header>
 
-<div class="row menu-wrapper">
-	<div class="col">
+@* menu-bar *@
+<section class="container menu-section">
+	<div class="row-1">
+		<h1>Appetizers</h1>
+		<div class="menu-bar">
+			@foreach (var appetizer in Model.Appetizers) {
+				<h2>@appetizer.Name</h2>
+				<p class="menu-des">@appetizer.Description</p>
+				<p class="menu-pr">$@appetizer.Price</p>
+			}
+		</div>
 
-		<h2 class="menu-title">Appetizers</h2>
-
-		@* display appetizers *@
-
-		@foreach (var item in Model.Appetizers)
-		{
-			<div class="menu-box">
-				<div class="menu-name">
-					@Html.DisplayFor(modelItem => item.Name)
-				</div>
-				<div class="menu-description">
-					@Html.DisplayFor(modelItem => item.Description)
-				</div>
-				<div class="menu-price">
-					$@Html.DisplayFor(modelItem => item.Price)
-				</div>
-			</div>
-		}
-
-
-
-		<h2 class="menu-title">Deserts</h2>
-
-		@* display Deserts *@
-
-		@foreach (var item in Model.Deserts)
-		{
-			<div class="menu-name">
-				@Html.DisplayFor(modelItem => item.Name)
-			</div>
-			<div class="menu-description">
-				@Html.DisplayFor(modelItem => item.Description)
-			</div>
-			<div class="menu-price">
-				@Html.DisplayFor(modelItem => item.Price)
-			</div>
-		}
-
-
-
+		<h1>Desserts</h1>
+		<div class="menu-bar">
+			@foreach (var desert in Model.Deserts) {
+				<h2>@desert.Name</h2>
+				<p class="menu-des">@desert.Description</p>
+				<p class="menu-pr">$@desert.Price</p>
+			}
+		</div>
 	</div>
-	<div class="col">
+	<div class="row-2">
+		<h1>Mains</h1>
+		<div class="menu-bar">
+			@foreach (var main in Model.Entrees) {
+				<h2>@main.Name</h2>
+				<p class="menu-des">@main.Description</p>
+				<p class="menu-pr">$@main.Price</p>
+			}
+		</div>
 
-		<h2 class="menu-title">Mains</h2>
-
-		@* display Mains *@
-
-
-		@foreach (var item in Model.Entrees)
-		{
-			<div class="menu-name">
-				@Html.DisplayFor(modelItem => item.Name)
-			</div>
-			<div class="menu-description">
-				@Html.DisplayFor(modelItem => item.Description)
-			</div>
-			<div class="menu-price">
-				@Html.DisplayFor(modelItem => item.Price)
-			</div>
-		}
-		<h2 class="menu-title">Drinks</h2>
-
-		@* display Drinks *@
-
-		@foreach (var item in Model.Drinks)
-		{
-			<div class="menu-name">
-				@Html.DisplayFor(modelItem => item.Name)
-			</div>
-			<div class="menu-description">
-				@Html.DisplayFor(modelItem => item.Description)
-			</div>
-			<div class="menu-price">
-				@Html.DisplayFor(modelItem => item.Price)
-			</div>
-		}
+		<h1>Drinks</h1>
+		<div class="menu-bar">
+			@foreach (var drink in Model.Drinks) {
+				<h2>@drink.Name</h2>
+				<p class="menu-des">@drink.Description</p>
+				<p class="menu-pr">$@drink.Price</p>
+			}
+		</div>
 	</div>
-</div>
-
-
+</section>

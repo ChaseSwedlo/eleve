@@ -4,7 +4,7 @@ using RestaurantProject.Models;
 
 namespace RestaurantProject.Controllers
 {
-	public class MenuController : Controller
+    public class MenuController : Controller
 	{
 		/*
          * Read Appetizers
@@ -12,7 +12,7 @@ namespace RestaurantProject.Controllers
          * Read Deserts
          * Read Drinks
          */
-
+		
 		private readonly AppetizerService _appetizerService;
 		private readonly EntreeService _entreeService;
 		private readonly DesertService _desertService;
@@ -27,7 +27,7 @@ namespace RestaurantProject.Controllers
 			_drinkService = drinkService;
 		}
 
-		public IActionResult Index()
+        public IActionResult Index()
 		{
 			var appetizers = _appetizerService.GetAppetizers();
 			var entrees = _entreeService.GetEntrees();

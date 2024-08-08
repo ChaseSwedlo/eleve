@@ -62,25 +62,6 @@ header::before {
   height: 15rem;
 }
 
-.promo-item-container-1 .promo-item-img {
-  background-image: url('/assets/media/promotion_1.jpg');
-}
-.promo-item-container-2 .promo-item-img {
-  background-image: url('/assets/media/promotion_2.jpg');
-}
-.promo-item-container-3 .promo-item-img {
-  background-image: url('/assets/media/promotion_3.jpg');
-}
-.promo-item-container-4 .promo-item-img {
-  background-image: url('/assets/media/promotion_4.jpg');
-}
-.promo-item-container-5 .promo-item-img {
-  background-image: url('/assets/media/promotion_5.jpg');
-}
-.promo-item-container-6 .promo-item-img {
-  background-image: url('/assets/media/promotion_6.jpg');
-}
-
 .promo-item-line {
   margin-top: 20px;
 }
@@ -100,4 +81,47 @@ header::before {
 
 .promo-price {
   font-size: 2rem;
+}
+
+/* =====================Menu Section===================== */
+.menu-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.menu-bar {
+    border-top: 2px solid #000;
+    padding: 0px 22px;
+}
+
+.row-1 {
+    border-right: 2px solid #000;
+    padding: 0px 40px;
+}
+
+.row-2 {
+    padding: 0px 40px;
+}
+
+.menu-section h1 {
+    text-align: center;
+    font-family: Kaisei Tokumin;
+    color: #8B1313;
+    font-size: 30.60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu-bar h2, .menu-bar p {
+    text-align: left !important;
+}
+
+.menu-bar h2, p.menu-pr {
+    font-weight: 600;
+}
+
+.menu-bar h2 {
+    margin-top: 30px;
 }

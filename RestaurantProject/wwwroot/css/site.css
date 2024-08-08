@@ -451,3 +451,9 @@ footer a {
     color: #000;
     background-color: #fff;
 }
+
+
+.view-menu-btn {
+    text-decoration: none;
+    color: #fff;
+}

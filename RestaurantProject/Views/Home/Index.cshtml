@@ -28,7 +28,7 @@
                     <a href="@Url.Action("Index", "Manage")" class="nav-link">Management</a>
                 </div>
             </div>
-            <a href="index.html" class="logo serif-font h1-link">Elevé</a>
+            <a href="@Url.Action("Index", "Home")" class="logo serif-font h1-link">Elevé</a>
             <button class="find-a-table-btn"><a class="reserve-header-btn" href="@Url.Action("Index", "Reserve")">Find a Table</a></button>
         </div>
         <div class="header-text serif-font">
@@ -37,7 +37,7 @@
                 Experience the epitome of luxury dining at Elevé, where every detail is meticulously curated to create an
                 unforgettable evening of sublime flavors, exceptional service, and refined ambiance.
             </p>
-            <button class="header-button">View Menu</button>
+            <button class="header-button"><a class="view-menu-btn" href="@Url.Action("Index", "Menu")">View Menu</a></button>
         </div>
     </div>
 </header>
