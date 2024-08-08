@@ -5,43 +5,43 @@
 	ViewBag.Title = "Index";
 }
 
-<div class="row">
-
-
+<div class="row menu-wrapper">
 	<div class="col">
 
-		<h2>Appetizers</h2>
+		<h2 class="menu-title">Appetizers</h2>
 
 		@* display appetizers *@
 
 		@foreach (var item in Model.Appetizers)
 		{
-			<div>
-				@Html.DisplayFor(modelItem => item.Name)
-			</div>
-			<div>
-				@Html.DisplayFor(modelItem => item.Description)
-			</div>
-			<div>
-				@Html.DisplayFor(modelItem => item.Price)
+			<div class="menu-box">
+				<div class="menu-name">
+					@Html.DisplayFor(modelItem => item.Name)
+				</div>
+				<div class="menu-description">
+					@Html.DisplayFor(modelItem => item.Description)
+				</div>
+				<div class="menu-price">
+					$@Html.DisplayFor(modelItem => item.Price)
+				</div>
 			</div>
 		}
 
 
 
-		<h2>Deserts</h2>
+		<h2 class="menu-title">Deserts</h2>
 
-		@* display appetizers *@
+		@* display Deserts *@
 
 		@foreach (var item in Model.Deserts)
 		{
-			<div>
+			<div class="menu-name">
 				@Html.DisplayFor(modelItem => item.Name)
 			</div>
-			<div>
+			<div class="menu-description">
 				@Html.DisplayFor(modelItem => item.Description)
 			</div>
-			<div>
+			<div class="menu-price">
 				@Html.DisplayFor(modelItem => item.Price)
 			</div>
 		}
@@ -49,43 +49,42 @@
 
 
 	</div>
-
 	<div class="col">
 
-		<h2>Mains</h2>
+		<h2 class="menu-title">Mains</h2>
 
-		@* display appetizers *@
+		@* display Mains *@
+
 
 		@foreach (var item in Model.Entrees)
 		{
-			<div>
+			<div class="menu-name">
 				@Html.DisplayFor(modelItem => item.Name)
 			</div>
-			<div>
+			<div class="menu-description">
 				@Html.DisplayFor(modelItem => item.Description)
 			</div>
-			<div>
+			<div class="menu-price">
 				@Html.DisplayFor(modelItem => item.Price)
 			</div>
 		}
-		<h2>Drinks</h2>
+		<h2 class="menu-title">Drinks</h2>
 
-		@* display appetizers *@
+		@* display Drinks *@
 
 		@foreach (var item in Model.Drinks)
 		{
-			<div>
+			<div class="menu-name">
 				@Html.DisplayFor(modelItem => item.Name)
 			</div>
-			<div>
+			<div class="menu-description">
 				@Html.DisplayFor(modelItem => item.Description)
 			</div>
-			<div>
+			<div class="menu-price">
 				@Html.DisplayFor(modelItem => item.Price)
 			</div>
 		}
 	</div>
-
 </div>
 
 
