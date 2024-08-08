@@ -360,6 +360,15 @@ footer a {
 .home-button {
     width: 100svw;
     text-align: center;
+    text-decoration: none;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 5px 15px;
+    margin-bottom: 55px;
+}
+
+.home-button:hover {
+    color: #fff;
 }
 
 /* =====================Promotions Section===================== */
