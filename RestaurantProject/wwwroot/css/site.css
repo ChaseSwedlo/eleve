@@ -382,6 +382,7 @@ footer a {
 .promo-price {
     font-size: 2rem;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 .promo-discount {
