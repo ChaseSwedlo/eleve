@@ -185,7 +185,7 @@ footer a {
 /* ======Locations====== */
 
 .location-section {
-    padding: 60px 110px;
+    padding: 60px 0;
 }
 
 .l-container {
@@ -224,12 +224,12 @@ footer a {
 }
 
 .location-info {
-    width: 380px;
+    width: 470px;
 }
 
 .location-section figure {
-    width: 380px;
-    height: 380px;
+    width: 470px;
+    height: 480px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
