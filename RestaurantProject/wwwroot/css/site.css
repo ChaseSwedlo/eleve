@@ -69,7 +69,7 @@ body {
 footer {
     background-color: #8B1313;
     color: #ffffff;
-    padding: 83px 0;
+    padding: 30px 0;
     text-align: left;
 }
 
@@ -82,6 +82,8 @@ footer {
 .footer-title h2 {
     font-weight: 700;
     font-size: 54px;
+    font-family: "Kaisei Tokumin", serif;
+    margin-top: -10px;
 }
 
 .footer-box div {
@@ -105,6 +107,7 @@ footer a {
 
 .footer-logos {
     align-items: flex-end;
+    gap: 5px;
 }
 
 .footer-logos p {
@@ -114,6 +117,9 @@ footer a {
 
 .footer-cc {
     margin-top: 50px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-size: 22px;
 }
 
 .icons {
@@ -140,7 +146,8 @@ footer a {
 .our-story h1 {
     font-size: 54px;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 6rem;
+    font-family: "Kaisei Tokumin", serif;
 }
 
 .os-container {
@@ -154,20 +161,25 @@ footer a {
 
 .os-image {
     flex: 1;
+    margin: 0;
 }
 
 .os-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .os-text {
     flex: 1;
     text-align: left;
-    font-size: 19px;
+    font-size: 1.3rem;
     font-weight: 400;
     line-height: 27px;
     color: #333;
+}
+
+.os-text p {
+    margin-bottom: 0;
 }
 
 /* ======Locations====== */
@@ -227,13 +239,20 @@ footer a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 60px;
 }
 
 /* ======Chef Reviews====== */
 
 .review-grid > div {
-    padding: 20px;
+    /*padding: 20px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-grid > div > p {
+    line-height: 1.5;
 }
 
 .chef-section {
@@ -241,14 +260,17 @@ footer a {
 }
 
 .chef-section h1 {
-    font-size: 54px;
+    width: 50rem;
+    font-size: 3rem;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    margin-inline: auto;
+    font-family: "Kaisei Tokumin", serif;
 }
 
 .chef-section figure {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
     background-color: #ffffff;
     border-radius: 50%;
     overflow: hidden;
@@ -256,6 +278,7 @@ footer a {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 0;
 }
 
 .chef-section figure img {
@@ -269,20 +292,36 @@ footer a {
 }
 
 .chef-section p {
-    font-size: 18px;
+    font-size: 1.3rem;
 }
 
 .chef-info {
     width: 100%;
     display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.chef-name-title {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    width: 20rem;
+    justify-content: center;
+    padding-left: 15px;
 }
 
 .chef-info h3 {
     font-size: 22px;
-    margin-left: 15px;
-    line-height: 85px;
     color: #8B1313;
+    font-weight: 650;
 }
+
+.chef-info p {
+    margin-bottom: 0;
+}
+
+
 
 .horizontal-line {
     width: 100%;
@@ -379,6 +418,7 @@ footer a {
 .promo-price {
     font-size: 2rem;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 .promo-discount {
@@ -403,6 +443,8 @@ footer a {
     text-decoration: none;
     color: #fff;
     transition-duration: 0.2s;
+    border: 1px solid #fff;
+    padding: 4px 8px;
 }
 
 .reserve-header-btn:hover {
