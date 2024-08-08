@@ -463,4 +463,9 @@ footer a {
 .view-menu-btn {
     text-decoration: none;
     color: #fff;
+    transition: all 0.3s ease;
+}
+
+.view-menu-btn:hover {
+    color: var(--primary);
 }
